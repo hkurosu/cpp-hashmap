@@ -61,8 +61,8 @@ namespace cpphashmap
         typedef K	 key_type;
         typedef T	 mapped_type;
 
-        K			 key;
-        T			 value;
+        K		 key;
+        T		 value;
         Node<K, T>*	 _next;
         Node<K, T>*	 _prev;
 
@@ -221,8 +221,8 @@ namespace cpphashmap
     template <typename N, typename A>
     struct NodeChunk
     {
-        N*				data;
-        int				size;
+        N*		data;
+        int		size;
         NodeChunk<N, A>	*next;
 
         NodeChunk(N* data, int s);
@@ -236,11 +236,11 @@ namespace cpphashmap
     class NodePool
     {
     public:
-        typedef N							node_type;
+        typedef N				node_type;
         typedef typename N::key_type		key_type;
         typedef typename N::mapped_type		mapped_type;
-        typedef A							allocator_type;
-        typedef NodeChunk<N, A>				chunk_type;
+        typedef A				allocator_type;
+        typedef NodeChunk<N, A>			chunk_type;
 
         node_type* next(const key_type& k, const mapped_type& v);
         void release(node_type* v);
@@ -272,7 +272,7 @@ namespace cpphashmap
     class Bucket
     {
     public:
-        typedef V						value_type;
+        typedef V			value_type;
         typedef typename V::key_type	key_type;
         typedef typename V::mapped_type	mapped_type;
 
@@ -325,11 +325,11 @@ public:
     typedef T mapped_type;
     typedef H hasher;
     typedef A allocator_type;
-    typedef cpphashmap::Node<K, T>					node_type;
+    typedef cpphashmap::Node<K, T>			node_type;
     typedef cpphashmap::NodeIterator<node_type>		iterator;
-    typedef cpphashmap::ConstNodeIterator<node_type> const_iterator;
+    typedef cpphashmap::ConstNodeIterator<node_type>	const_iterator;
     typedef cpphashmap::NodePool<node_type, A>		pool_type;
-    typedef cpphashmap::Bucket<node_type>			bucket_type;
+    typedef cpphashmap::Bucket<node_type>		bucket_type;
 
     /**
     * Constructor - SHOULD NOT trigger any heap allocation
