@@ -11,8 +11,7 @@ namespace cpphashmap
 	public:
 		uint32_t operator() (const int val) const
 		{
-			uint32_t x = static_cast<uint32_t>(val);
-			return x + (x >> 3) + (x >> 13) + (x >> 23);
+            return val;
 		}
 	};
 

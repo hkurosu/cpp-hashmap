@@ -358,7 +358,7 @@ public:
         , _bucketSize(0)
         , _count(0)
         , _mask(0)
-        , _initSize(0)
+        , _initSize(1)
         , _first(NULL)
     {
         while (_initSize < initSize)
