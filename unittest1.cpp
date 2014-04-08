@@ -22,9 +22,12 @@ namespace cpphashmap
 		
 		TEST_METHOD(TestMethod1)
 		{
-			HashMap<int, int> hash;
-			hash.insert(1, 1);
+			HashMap<int, int> hash(4);
+			hash.insert(1, 10);
 			int count = hash.count();
+            Assert::AreEqual(1, count);
+            HashMap<int, int>::iterator i = hash.find(1);
+            Assert::AreEqual(10, i->value);
 		}
 
 	};
